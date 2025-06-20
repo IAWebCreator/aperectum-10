@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApeRectum - The Ultimate Crude Cosmic Meme Experience</title>
+    <meta name="description" content="ApeRectum - Where crude anatomical humor meets astronomical wonders. Join the most irreverent crypto journey through space and bodily functions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-orange: #FF4500;
+            --primary-black: #000000;
+            --deep-purple: #2d1b69;
+            --dark-brown: #3d2914;
+            --white: #ffffff;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--primary-black);
+            color: var(--white);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Canvas */
+        #cosmicCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 30% 40%, var(--deep-purple) 0%, var(--primary-black) 50%);
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            animation: cursorWiggle 2s infinite;
+        }
+
+        @keyframes cursorWiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(3deg); }
+        }
+
+        /* Header Styles */
+        header {
+            position: relative;
+            z-index: 100;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-black) 100%);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-black);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: logoFloat 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+            animation: titlePulse 2s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 30px;
+            animation: subtitleWobble 3s ease-in-out infinite;
+        }
+
+        @keyframes subtitleWobble {
+            0%, 100% { transform: skew(0deg); }
+            25% { transform: skew(1deg); }
+            75% { transform: skew(-1deg); }
+        }
+
+        .hero-cta {
+            background: var(--primary-orange);
+            color: var(--primary-black);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cta:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.7);
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+        }
+
+        .hero-cta:hover::before {
+            width: 200%;
+            height: 200%;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--primary-orange);
+            text-align: center;
+            margin-bottom: 50px;
+            animation: sectionTitleFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes sectionTitleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(1deg); }
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 300px;
+            background: var(--primary-orange);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .about-image:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .about-image img {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--white);
+        }
+
+        .about-text strong {
+            color: var(--primary-orange);
+        }
+
+        /* Tokenomics Section */
+        .tokenomics {
+            background: linear-gradient(45deg, var(--primary-black), var(--deep-purple));
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tokenomics-card {
+            background: var(--primary-orange);
+            color: var(--primary-black);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tokenomics-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+        }
+
+        .tokenomics-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tokenomics-card p {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        /* How to Buy Section */
+        .how-to-buy {
+            background: var(--primary-orange);
+            color: var(--primary-black);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step-card {
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--primary-orange) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .step-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .step-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.3);
+        }
+
+        .step-number {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--primary-orange);
+            margin-bottom: 15px;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Community Section */
+        .community {
+            text-align: center;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-link {
+            background: var(--primary-orange);
+            color: var(--primary-black);
+            padding: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--primary-black);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s ease;
+        }
+
+        .social-link:hover::before {
+            width: 200%;
+            height: 200%;
+        }
+
+        .social-link:hover {
+            color: var(--primary-orange);
+            transform: translateY(-5px);
+        }
+
+        .social-link span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-black);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 3px solid var(--primary-orange);
+        }
+
+        .contract-address {
+            background: var(--primary-orange);
+            color: var(--primary-black);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            word-break: break-all;
+        }
+
+        .contract-address:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .section {
+                padding: 60px 15px;
+            }
+
+            .tokenomics-grid,
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Floating Particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 69, 0, 0.6);
+            border-radius: 50%;
+            animation: float 8s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles for accessibility */
+        *:focus {
+            outline: 2px solid var(--primary-orange);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Animated Background Canvas -->
+    <canvas id="cosmicCanvas"></canvas>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="logo" role="img" aria-label="ApeRectum Logo">
+            <img src="./logo.png" alt="ApeRectum - The Crude Cosmic Meme Token">
+        </div>
+        <nav role="navigation" aria-label="Main navigation">
+            <span class="sr-only">Navigate to different sections of ApeRectum</span>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <h1 class="hero-title" id="hero-title">Welcome to ApeRectum</h1>
+            <p class="hero-subtitle">Where crude anatomical humor meets astronomical wonders in the most irreverent crypto journey through space and bodily functions!</p>
+            <button class="hero-cta" onclick="scrollToSection('about')" aria-describedby="hero-cta-desc">
+                <span>Explore the Cosmic Anus</span>
+            </button>
+            <div id="hero-cta-desc" class="sr-only">Navigate to learn more about ApeRectum token</div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about" aria-labelledby="about-title">
+            <h2 class="section-title" id="about-title">What is ApeRectum?</h2>
+            <div class="about-content">
+                <div class="about-image" role="img" aria-label="ApeRectum visual representation">
+                    <img src="./logo.png" alt="ApeRectum logo showing the essence of crude astronomical humor">
+                </div>
+                <div class="about-text">
+                    <p>
+                        <strong>ApeRectum</strong> is the ultimate fusion of crude anatomical humor and astronomical wonder! 
+                        We're not your typical meme coin - we're a cosmic journey through the most irreverent corners of space, 
+                        where <strong>Uranus</strong> isn't just a planet, it's a punchline!
+                    </p>
+                    <p>
+                        Our community celebrates the absurd, the crude, and the cosmically hilarious. 
+                        From <strong>galactic gas clouds</strong> to <strong>stellar sphincters</strong>, we find humor in the vast expanse of space 
+                        while building a strong, engaged community of fellow cosmic comedians.
+                    </p>
+                    <p>
+                        Join us as we explore the <strong>black holes</strong> of humor and the <strong>nebulas of nonsense</strong> 
+                        in this wild ride through the most inappropriate corners of the cryptocurrency universe!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokenomics Section -->
+        <section class="section" id="tokenomics" aria-labelledby="tokenomics-title">
+            <h2 class="section-title" id="tokenomics-title">Tokenomics</h2>
+            <div class="tokenomics">
+                <div class="tokenomics-grid">
+                    <div class="tokenomics-card" tabindex="0" role="button" aria-label="Total Supply Information">
+                        <h3>Total Supply</h3>
+                        <p>69,420,000,000</p>
+                    </div>
+                    <div class="tokenomics-card" tabindex="0" role="button" aria-label="Burned Tokens Information">
+                        <h3>Burned Tokens</h3>
+                        <p>42,069,000,000</p>
+                    </div>
+                    <div class="tokenomics-card" tabindex="0" role="button" aria-label="Circulating Supply Information">
+                        <h3>Circulating Supply</h3>
+                        <p>27,351,000,000</p>
+                    </div>
+                    <div class="tokenomics-card" tabindex="0" role="button" aria-label="Liquidity Pool Information">
+                        <h3>LP Locked</h3>
+                        <p>100%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Buy Section -->
+        <section class="section" id="how-to-buy" aria-labelledby="buy-title">
+            <div class="how-to-buy">
+                <h2 class="section-title" id="buy-title" style="color: var(--primary-black);">Join the ApeRectum Community - How to Buy</h2>
+                <div class="steps-grid">
+                    <div class="step-card" tabindex="0" role="button" aria-label="Step 1: Get a Wallet">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Get a Wallet</h3>
+                        <p>Download a reputable Solana wallet like Phantom or Solflare to store your cosmic tokens.</p>
+                    </div>
+                    <div class="step-card" tabindex="0" role="button" aria-label="Step 2: Acquire SOL">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Acquire SOL</h3>
+                        <p>Purchase Solana (SOL) from a cryptocurrency exchange like Coinbase or Binance.</p>
+                    </div>
+                    <div class="step-card" tabindex="0" role="button" aria-label="Step 3: Connect to a DEX">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Connect to a DEX</h3>
+                        <p>Connect your wallet to a decentralized exchange like Jupiter or Raydium.</p>
+                    </div>
+                    <div class="step-card" tabindex="0" role="button" aria-label="Step 4: Swap SOL for AR">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Swap SOL for AR</h3>
+                        <p>Use the DEX's swap feature to exchange your SOL for ApeRectum (AR) tokens.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="section community" id="community" aria-labelledby="community-title">
+            <h2 class="section-title" id="community-title">Connect with the ApeRectum Community</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">
+                Join our growing community of cosmic comedians and crude astronomers!
+            </p>
+            <div class="social-grid">
+                <a href="#" class="social-link" aria-label="Follow ApeRectum on Twitter">
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="social-link" aria-label="Join ApeRectum Telegram">
+                    <span>Telegram</span>
+                </a>
+                <a href="#" class="social-link" aria-label="Watch ApeRectum on YouTube">
+                    <span>YouTube</span>
+                </a>
+                <a href="#" class="social-link" aria-label="Follow ApeRectum on TikTok">
+                    <span>TikTok</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2024 ApeRectum. All rights reserved.</p>
+        <div class="contract-address" onclick="copyToClipboard(this)" role="button" tabindex="0" aria-label="Copy contract address">
+            <strong>Contract Address:</strong><br>
+            CHiNsA2B6ZbmKnEmHPCbbX9aXJyoJzAtcLpHEDd6Qyq3
+        </div>
+        <p><em>Remember: This is a meme token for entertainment purposes. Always do your own research!</em></p>
+    </footer>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            const dx = mouseX - cursorX;
+            const dy = mouseY - cursorY;
+            
+            cursorX += dx * 0.1;
+            cursorY += dy * 0.1;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Hide cursor on mobile
+        if (window.innerWidth <= 768) {
+            cursor.style.display = 'none';
+        }
+
+        // Animated Background Canvas
+        const canvas = document.getElementById('cosmicCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = 100;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 3 + 1;
+                this.alpha = Math.random() * 0.5 + 0.2;
+                this.color = `rgba(255, 69, 0, ${this.alpha})`;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+                this.alpha = Math.sin(Date.now() * 0.001 + this.x * 0.01) * 0.3 + 0.4;
+                this.color = `rgba(255, 69, 0, ${this.alpha})`;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        // Initialize particles
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateBackground() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw gaseous background effect
+            const gradient = ctx.createRadialGradient(
+                canvas.width * 0.3, canvas.height * 0.4, 0,
+                canvas.width * 0.3, canvas.height * 0.4, canvas.width * 0.8
+            );
+            gradient.addColorStop(0, 'rgba(45, 27, 105, 0.3)');
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0.8)');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Update and draw particles
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            requestAnimationFrame(animateBackground);
+        }
+        animateBackground();
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Copy contract address to clipboard
+        function copyToClipboard(element) {
+            const text = 'CHiNsA2B6ZbmKnEmHPCbbX9aXJyoJzAtcLpHEDd6Qyq3';
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = element.innerHTML;
+                element.innerHTML = '<strong>Copied!</strong><br>' + text;
+                element.style.background = '#4CAF50';
+                
+                setTimeout(() => {
+                    element.innerHTML = originalText;
+                    element.style.background = 'var(--primary-orange)';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        // Add click effects to interactive elements
+        document.querySelectorAll('.tokenomics-card, .step-card, .social-link').forEach(element => {
+            element.addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.pointerEvents = 'none';
+                
+                this.style.position = 'relative';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Floating particles in viewport
+        function createFloatingParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            particle.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
+
+        // Create floating particles periodically
+        setInterval(createFloatingParticle, 2000);
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'none';
+                    entry.target.offsetHeight; // Trigger reflow
+                    entry.target.style.animation = null;
+                }
+            });
+        });
+
+        document.querySelectorAll('.section-title, .tokenomics-card, .step-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                const focused = document.activeElement;
+                if (focused.classList.contains('contract-address')) {
+                    e.preventDefault();
+                    copyToClipboard(focused);
+                }
+            }
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 Welcome to ApeRectum - The Cosmic Comedy Show! 🚀');
+            
+            // Add some
